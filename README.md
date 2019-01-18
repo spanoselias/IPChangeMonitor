@@ -1,2 +1,2 @@
-# IPChangeMonitor
-Notify if the public ip of your internet is changed. 
+# Real-Time data synchronization tool 
+The goal of this project is to backup data in near real-time using a versioning algorithm . 

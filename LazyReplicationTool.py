@@ -5,14 +5,14 @@ import shutil
 
 print('Files Synchonization Tools is running...')
 
-mypath = 'C:\\Users\\Elias\\Pictures\\'
-destPath = 'C:\\Users\\Elias\\Desktop\\testBackUp'
-# hash = checksumdir.dirhash(mypath)
+mypath = '\\192.168.1.179\\Download\\'
+destPath = 'C:\\Users\\HpServer\\Desktop\\BackupTesting'
+hash = checksumdir.dirhash(mypath)
 
-# print(hash)
+print(hash)
 
-shutil.make_archive('C:\\Users\\Elias\\Desktop\\testBackUp\\testing', 'zip', mypath)
-shutil.unpack_archive(str('C:\\Users\\Elias\\Desktop\\testBackUp\\testing.zip'), str(destPath), 'zip')
+# shutil.make_archive('C:\\Users\\Elias\\Desktop\\testBackUp\\testing', 'zip', mypath)
+# shutil.unpack_archive(str('C:\\Users\\Elias\\Desktop\\testBackUp\\testing.zip'), str(destPath), 'zip')
 
 print('Finished...')
 
