@@ -22,6 +22,7 @@ mypath = conf['sourcePath']
 destPath = conf['destPath']
 hash = checksumdir.dirhash(mypath)
 print(hash)
+
 # shutil.make_archive('C:\\Users\\Elias\\Desktop\\testBackUp\\testing', 'zip', mypath)
 # shutil.unpack_archive(str('C:\\Users\\Elias\\Desktop\\testBackUp\\testing.zip'), str(destPath), 'zip')
 
