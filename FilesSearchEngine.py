@@ -1,6 +1,4 @@
-from Utils.ReplicationModule import discoverDirectoryFiles
 from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
 
 
 def approximationStringMatching(search, files):

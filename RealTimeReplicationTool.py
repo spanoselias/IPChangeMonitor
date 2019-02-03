@@ -1,7 +1,5 @@
-import checksumdir
-
 from Utils.FilesUtils import readConfigFile
-from Utils.ReplicationModule import replicate
+from Modules.ReplicationModule import replicate
 
 print('Files Synchonization Tools is running...')
 
