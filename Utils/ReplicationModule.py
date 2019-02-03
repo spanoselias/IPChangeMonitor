@@ -12,3 +12,9 @@ def replicate(mypath, destPath):
     zipFiles(destPath, mypath)
 
     return metadata
+
+
+def discoverDirectoryFiles(directoryPath):
+    metadata = readDirectoryMetadata(directoryPath)
+
+    return metadata
