@@ -1,6 +1,6 @@
 import checksumdir
 
-from FilesUtils import zipFiles, readConfigFile, readDirectoryMetadata
+from Utils.FilesUtils import zipFiles, readConfigFile, readDirectoryMetadata
 
 print('Files Synchonization Tools is running...')
 

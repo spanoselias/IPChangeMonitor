@@ -1,7 +1,6 @@
 import shutil
 import json
 from os import walk
-from distutils.dir_util import copy_tree
 
 def zipFiles(sourcePath, destPath):
     shutil.make_archive(str(sourcePath), 'zip', str(destPath))
