@@ -1,6 +1,7 @@
 {
     "files":{
-        "host_path":"C:\\Users\\HpServer\\Pictures",
-        "dest_path":"C:\\Users\\HpServer\\Desktop\\BackupTesting"
+        "host_path":"C:\\Users\\HpServer\\Pictures\\Pic",
+        "dest_path":"C:\\Users\\HpServer\\Desktop\\BackupTesting\\testingBackup"
     }
 }
+
