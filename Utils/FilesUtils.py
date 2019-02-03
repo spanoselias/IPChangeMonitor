@@ -2,8 +2,11 @@ import shutil
 import json
 from os import walk
 
-def zipFiles(sourcePath, destPath):
-    shutil.make_archive(str(sourcePath), 'zip', str(destPath))
+
+def zipFiles(sourcePath, destPath, currentTimestap):
+    finalSourcePath = str(sourcePath) + '_' + str(currentTimestap).replace(':', '_')
+
+    shutil.make_archive(finalSourcePath, 'zip', str(destPath))
     return
 
 
