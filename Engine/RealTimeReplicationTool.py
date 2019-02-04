@@ -1,5 +1,3 @@
-import datetime
-
 from Utils.FilesUtils import readConfigFile, readDirectoryMetadata, readDirectoryMetadataObj
 from Modules.ReplicationModule import replicate
 
@@ -7,7 +5,7 @@ print('Files Synchonization Tools is running...')
 
 conf = readConfigFile()
 
-mypath = conf['sourcePath']
+sourcePath = conf['sourcePath']
 destPath = conf['destPath']
 copyPath = conf['copyPath']
 
