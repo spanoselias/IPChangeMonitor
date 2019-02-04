@@ -1,19 +1,25 @@
 from fuzzywuzzy import fuzz
 
+from Modules.ReplicationModule import discoverDirectoryFiles
+from Utils.FilesUtils import readConfigFile
 
-def approximationStringMatching(search, files):
+def approximationStringMatching(keyword, files):
     f = []
-    f.extend("\n".join(s for s in files if search.lower() in s.lower()))
+
+    for filename in files:
+        if fuzz.partial_ratio(filename, keyword) > 85:
+            f.append(str(filename))
+
     return f
 
-path = 'Y:\\'
+conf = readConfigFile()
 
-print(fuzz.partial_ratio("Catherine M. Gitau", "Catherine Gitau"))
-# files = discoverDirectoryFiles(path)
+mypath = conf['sourcePath']
+destPath = conf['destPath']
 
-# print(len(files))
+files = discoverDirectoryFiles(mypath)
 
-# results = approximationStringMatching('Java', files)
+results = approximationStringMatching('Java 2017', files)
 
-sub = 'Java'
+print('Program has finished.')
 # print("\n".join(s for s in files if sub.lower() in s.lower()))
