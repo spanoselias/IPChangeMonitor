@@ -24,6 +24,7 @@ def readConfigFile():
         data = json.load(json_data_file)
         confValues['sourcePath'] = data['files']['host_path']
         confValues['destPath'] = data['files']['dest_path']
+        confValues['copyPath'] = data['copyDirectory']['copy_path']
 
     return confValues
 

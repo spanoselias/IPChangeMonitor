@@ -22,3 +22,4 @@ def discoverDirectoryFiles(directoryPath):
     metadata = readDirectoryMetadata(directoryPath)
 
     return metadata
+

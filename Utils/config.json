@@ -1,7 +1,10 @@
 {
-    "files":{
-        "host_path":"Y:\\",
-        "dest_path":"C:\\Users\\HpServer\\Desktop\\BackupTesting\\testingBackup"
-    }
+  "files": {
+    "host_path": "Y:\\",
+    "dest_path": "C:\\Users\\HpServer\\Desktop\\BackupTesting\\testingBackup"
+  },
+  "copyDirectory": {
+    "copy_path": "A:\\"
+  }
 }
 

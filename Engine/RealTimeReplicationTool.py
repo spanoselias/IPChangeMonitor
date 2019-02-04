@@ -9,11 +9,12 @@ conf = readConfigFile()
 
 mypath = conf['sourcePath']
 destPath = conf['destPath']
+copyPath = conf['copyPath']
 
 # Reading metadata of files.
-metadataList = readDirectoryMetadataObj(mypath)
+#metadataList = readDirectoryMetadataObj(mypath)
 
-replicate(mypath, destPath)
+replicate(copyPath, destPath)
 
 print('Finished...')
 
