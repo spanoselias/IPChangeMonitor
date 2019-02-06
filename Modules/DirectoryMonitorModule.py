@@ -1,15 +1,25 @@
+import datetime
 import sys
 import time
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
+from Utils import IOUtils
+
+
 class EventHandler(FileSystemEventHandler):
     def on_any_event(self, event):
-        print("Even Signal")
-        print(event.event_type)
-        print(event.src_path)
-        print()
+        # Create the correct format for the monitor log.
+        entryLog = "{}|{}|{}\n".format(
+            datetime.datetime.now().isoformat(),
+            event.event_type,
+            event.src_path)
+
+        print(entryLog)
+
+        IOUtils.write("DirectoryMonitor.log", entryLog)
+
 
 if __name__ == "__main__":
     path = sys.argv[1] if len(sys.argv) > 1 else '.'
