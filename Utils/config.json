@@ -5,6 +5,9 @@
   },
   "copyDirectory": {
     "copy_path": "Y:\\"
+  },
+  "monitorDirectory": {
+    "monitor_path": "Y:\\"
   }
 }
 

@@ -1,5 +1,5 @@
 class Metadata:
-    def __init__(self, filename, path, hashcode=-1):
+    def __init__(self, filename, path, hashcode):
         self.filename = filename
         self.path = path
         self.hashcode = hashcode

@@ -1,8 +1,5 @@
 import shutil
 import json
-from os import walk
-
-from Objects.Metadata import Metadata
 
 
 def zipFiles(sourcePath, destPath, currentTimestap):
@@ -27,22 +24,3 @@ def readConfigFile():
         confValues['copyPath'] = data['copyDirectory']['copy_path']
 
     return confValues
-
-
-def readDirectoryMetadata(directory):
-    f = []
-
-    for (dirpath, dirnames, filenames) in walk(directory):
-        f.extend(filenames)
-
-    return f
-
-
-def readDirectoryMetadataObj(directory):
-    metadataList = []
-    for (dirpath, dirnames, filenames) in walk(directory):
-        for fileRow in filenames:
-            row = Metadata(dirpath, fileRow)
-            metadataList.append(row)
-
-    return metadataList
