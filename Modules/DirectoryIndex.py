@@ -31,4 +31,3 @@ memoryStructure = readPersistentStructure(path)
 newObj = pickle.loads(memoryStructure)
 
 print(len(newObj))
-# IOUtils.write("C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\Indexes\\directoriesIdx.idx", str(entry))
