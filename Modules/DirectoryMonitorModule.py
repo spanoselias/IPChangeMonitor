@@ -7,6 +7,7 @@ from watchdog.events import FileSystemEventHandler
 
 from Utils import IOUtils
 
+
 class EventHandler(FileSystemEventHandler):
     def on_any_event(self, event):
         # Create the correct format for the monitor log.
@@ -18,8 +19,11 @@ class EventHandler(FileSystemEventHandler):
         print(entryLog)
         IOUtils.write("C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\DirectoryMonitor.log", entryLog)
 
+
 if __name__ == "__main__":
     path = sys.argv[1] if len(sys.argv) > 1 else '.'
+
+
 
     event_handler = EventHandler()
     observer = Observer()
