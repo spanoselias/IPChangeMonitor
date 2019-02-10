@@ -1,36 +1,58 @@
-import json
 import os
 import pickle
 
-from Utils import DirectoryUtils, IOUtils
+from Utils import DirectoryUtils, IOUtils, LoggingUtils
 
 
 # Write to the disk the structure such that will be
 # persistent.
+from Utils.FilesUtils import readConfigFile
+
+
 def writePersistentStructure(filename, structure):
-    writeSerializer = open(filename, "wb")
-    pickle.dump(structure, writeSerializer)
+    try:
+        writeSerializer = open(filename, "wb")
+        pickle.dump(structure, writeSerializer)
+    except:
+        print("Unable to write persistent data structure in the following location: {}".format(filename))
+
     writeSerializer.close()
     return
 
 
 # Load a persistent data structure into memory.
 def readPersistentStructure(filename):
-    readSerializer = open("C:\\Users\\HpServer\Desktop\\LazyReplicationTool\\directoriesIdx.idx", "rb")
-    inMemoryStructure = pickle.load(readSerializer)
+    dirname = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Indexes'))
+    path = os.path.join(dirname, filename)
+
+    try:
+        readSerializer = open(path, "rb")
+        inMemoryStructure = pickle.load(readSerializer)
+    except:
+        print("Unable to read persistent data structure in the following location: {}".format(path))
+
     return inMemoryStructure
 
+shouldRead = True
 
-list = DirectoryUtils.readDirectoryMetadataObj("Y:")
+if shouldRead:
 
-print(len(list))
+    conf = readConfigFile()
+    readPath = conf['copyPath']
 
-path = 'C:\\Users\\HpServer\\Desktop\\LazyReplicationTool\\Indexes\\directoriesIdx.idx'
+    destPath = conf['destPath']
+    LoggingUtils.log('Start reading the following directory: {}'.format(readPath))
+    list = DirectoryUtils.readDirectoryMetadataObj(readPath)
+    print(len(list))
 
-entry = pickle.dumps(list)
-writePersistentStructure(path, entry)
+    # Retrieve the current path.
+    dirname = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Indexes'))
+    path = os.path.join(dirname, 'directoriesIdx.idx')
 
-# memoryStructure = readPersistentStructure(path)
-# newObj = pickle.loads(memoryStructure)
+    entry = pickle.dumps(list)
+    writePersistentStructure(path, entry)
 
-# print(len(newObj))
+else:
+    memoryStructure = readPersistentStructure('directoriesIdx.idx')
+    newObj = pickle.loads(memoryStructure)
+    print(len(newObj))
