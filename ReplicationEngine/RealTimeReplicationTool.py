@@ -1,4 +1,4 @@
-from Utils.FilesUtils import readConfigFile, readDirectoryMetadata, readDirectoryMetadataObj
+from Utils.FilesUtils import readConfigFile
 from Modules.ReplicationModule import replicate
 
 print('Files Synchonization Tools is running...')

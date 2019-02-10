@@ -2,7 +2,7 @@ class Metadata:
     def __init__(self, filename, path, hashcode):
         self.filename = filename
         self.path = path
-        self.hashcode = hashcode
+        self.modifiedDate = hashcode
 
         def __get_filename(self):
             return self.filename
@@ -11,4 +11,4 @@ class Metadata:
             return self.path
 
         def __get_hashcode(self):
-            return self.hashcode
+            return self.modifiedDate

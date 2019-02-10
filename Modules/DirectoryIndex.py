@@ -25,13 +25,12 @@ list = DirectoryUtils.readDirectoryMetadataObj("Y:")
 
 print(len(list))
 
-path = 'C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\Indexes\\directoriesIdx.idx'
+path = 'C:\\Users\\HpServer\\Desktop\\LazyReplicationTool\\Indexes\\directoriesIdx.idx'
 
 entry = pickle.dumps(list)
 writePersistentStructure(path, entry)
 
-memoryStructure = readPersistentStructure(path)
-newObj = pickle.loads(memoryStructure)
+# memoryStructure = readPersistentStructure(path)
+# newObj = pickle.loads(memoryStructure)
 
-print(len(newObj))
-IOUtils.write("C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\Indexes\\directoriesIdx.idx", str(entry))
+# print(len(newObj))
