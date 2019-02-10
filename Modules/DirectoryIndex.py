@@ -2,7 +2,6 @@ import json
 import os
 import pickle
 
-from Objects.Metadata import Metadata
 from Utils import DirectoryUtils, IOUtils
 
 
@@ -17,17 +16,16 @@ def writePersistentStructure(filename, structure):
 
 # Load a persistent data structure into memory.
 def readPersistentStructure(filename):
-    readSerializer = open("C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\Indexes\\directoriesIdx.idx", "rb")
+    readSerializer = open("C:\\Users\\HpServer\Desktop\\LazyReplicationTool\\directoriesIdx.idx", "rb")
     inMemoryStructure = pickle.load(readSerializer)
     return inMemoryStructure
 
 
-
-list = DirectoryUtils.readDirectoryMetadataObj("\\DataServer")
+list = DirectoryUtils.readDirectoryMetadataObj("Y:")
 
 print(len(list))
 
-path = "C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\Indexes\\directoriesIdx.idx"
+path = 'C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\Indexes\\directoriesIdx.idx'
 
 entry = pickle.dumps(list)
 writePersistentStructure(path, entry)
@@ -36,4 +34,4 @@ memoryStructure = readPersistentStructure(path)
 newObj = pickle.loads(memoryStructure)
 
 print(len(newObj))
-# IOUtils.write("C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\Indexes\\directoriesIdx.idx", str(entry))
+IOUtils.write("C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\Indexes\\directoriesIdx.idx", str(entry))
