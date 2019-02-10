@@ -5,7 +5,7 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-from Utils import IOUtils
+from Utils import IOUtils, LoggingUtils
 
 
 class EventHandler(FileSystemEventHandler):
@@ -17,13 +17,13 @@ class EventHandler(FileSystemEventHandler):
             event.src_path)
 
         print(entryLog)
-        IOUtils.write("C:\\Users\\Elias\\Desktop\\RealTimeReplicationTool\\DirectoryMonitor.log", entryLog)
+        IOUtils.write("C:\\Users\\HpServer\\Desktop\\LazyReplicationTool\\DirectoryMonitor.log", entryLog)
 
 
 if __name__ == "__main__":
     path = sys.argv[1] if len(sys.argv) > 1 else '.'
 
-
+    LoggingUtils.log('Directory Monitor is starting for the path: ' + path)
 
     event_handler = EventHandler()
     observer = Observer()
