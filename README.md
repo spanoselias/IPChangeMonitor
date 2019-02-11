@@ -1,4 +1,6 @@
 # Real-Time data synchronization tool 
+> This project is under-development yet. First version will be released soon!
+
 Real-Time replication tool will be mainly used to backup critical files from a local, or even remote locations such as NAS (e.g synology).
 The idea behind this project is to have a tool that can be automatically backup critical files based on an event (change, modified, added and deleted files) or scheduled task. 
 
@@ -9,4 +11,3 @@ As a result, in order to achieve that smart data structures will be used such as
  
 If somebody want to be a collaborator to this project and contribute to this idea please fell free to open an issue.      
 
-> This project is under-development yet.
