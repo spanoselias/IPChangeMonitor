@@ -1,5 +1,5 @@
 # Real-Time data synchronization tool 
-> This project is under-development yet. First version will be released soon!
+> This project is under-development. First release will be available soon!
 
 Real-Time replication tool will be mainly used to backup critical files from a local, or even remote locations such as NAS (e.g synology).
 The idea behind this project is to have a tool that can be automatically backup critical files based on an event (change, modified, added and deleted files) or scheduled task. 
