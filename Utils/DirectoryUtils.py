@@ -25,12 +25,14 @@ def md5(fname):
 
 def readDirectoryMetadataObj(directory):
     metadataList = []
+    metadataMap = {}
     for (dirpath, dirnames, filenames) in walk(directory):
         for filename in filenames:
             (mode, ino, dev, nlink, uid, gid, size, atime, mtime, ctime) = os.stat(dirpath + '\\' + filename)
 
             row = Metadata(filename, dirpath, mtime)
-            metadataList.append(row)
+            # metadataList.append(row)
+            metadataMap[filename] = row
         # for filename in dirnames:
         #     row = Metadata(dirpath, filename, -1)
         #     metadataList.append(row)

@@ -19,7 +19,6 @@ def writePersistentStructure(filename, structure):
     writeSerializer.close()
     return
 
-
 # Load a persistent data structure into memory.
 def readPersistentStructure(filename):
     dirname = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Indexes'))
